@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-
+import Header from '../components/header'
 class Main extends Component{
     render(){
         return(
             <section>
-                <h1>Hello</h1>
+                <Header/>
             </section>
         )
     }

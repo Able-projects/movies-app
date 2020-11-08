@@ -1,0 +1,87 @@
+$header-bg-color: rgb(21,56,75);
+$header-text-color: #ffffff;
+$hover-color: rgb(23,190,198);
+@mixin row($value){
+    display: flex;
+    width: 100%;
+    justify-content: $value;
+    margin: auto;
+    align-items: center;
+}
+@mixin column($value){
+    display: flex;
+    flex-direction: column;
+    justify-content: $value;
+    margin: auto;
+    align-items: center;
+}
+@mixin hover(){
+    :hover{
+        color:$hover-color !important;
+    }
+}
+.header-section{
+    @include row(space-around);
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-section div{
+    @include row(center)
+}
+
+.nav-links div{
+    margin: auto 15px;
+    @include hover()
+}
+.nav-links div p{
+    margin: 0;
+    @include hover()
+}
+.ant-dropdown-link{
+    @include row(center);   
+    color: $header-text-color;
+    margin-right: 15px;
+}
+
+.header-icon{
+    font-size: 22px;
+    margin-right: 15px;
+    @include hover()
+}
+
+#dropdawn-language{
+    width: 40px !important;
+    color: $header-text-color;
+    margin-right: 0;
+}
+
+#login-btn{
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    border: none;
+    width: 100px;
+    font-weight: 500;
+    font-size: 16px;
+    @include hover()
+}
+
+#login-btn .header-icon{
+    margin-right: 0;
+}
+
+.ant-dropdown-link:hover, #dropdawn-language:hover {
+    color: $hover-color !important;
+}
+
+.search-input{
+    border-radius: 20px !important;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(62,93,107) !important;
+    border: none !important;
+    color: $header-text-color !important;
+}

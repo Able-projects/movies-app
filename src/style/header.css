@@ -1,1 +1,110 @@
-/* No CSS *//*# sourceMappingURL=header.css.map */
+.header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #15384b;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-links div {
+  margin: auto 15px;
+}
+
+.nav-links div :hover {
+  color: #17bec6 !important;
+}
+
+.nav-links div p {
+  margin: 0;
+}
+
+.nav-links div p :hover {
+  color: #17bec6 !important;
+}
+
+.ant-dropdown-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  margin-right: 15px;
+}
+
+.header-icon {
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+.header-icon :hover {
+  color: #17bec6 !important;
+}
+
+#dropdawn-language {
+  width: 40px !important;
+  color: #ffffff;
+  margin-right: 0;
+}
+
+#login-btn {
+  background-color: #15384b;
+  color: #ffffff;
+  border: none;
+  width: 100px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#login-btn :hover {
+  color: #17bec6 !important;
+}
+
+#login-btn .header-icon {
+  margin-right: 0;
+}
+
+.ant-dropdown-link:hover, #dropdawn-language:hover {
+  color: #17bec6 !important;
+}
+
+.search-input {
+  border-radius: 20px !important;
+  height: 40px;
+  width: 100%;
+  background-color: #3e5d6b !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+/*# sourceMappingURL=header.css.map */

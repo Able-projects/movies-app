@@ -2,7 +2,7 @@ import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS, GET_POPULAR, GET_PLAYING,
 import axios from 'axios/index'
 
 export const getLatest = () => dispatch => {
-    axios.get(IP + 'movie/latest?api_key=' + key + '&language=en-US')
+    axios.get(IP + 'movie/latest?api_key=' + key + '&language=ru-RU')
     .then(response => {
         return dispatch ({
             type:GET_LATEST,
