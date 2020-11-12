@@ -6,26 +6,26 @@ export const getLatest = () => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_LATEST,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({
             type:GET_ERRORS,
-            payload:err.response.data
+            payload:err.response
         })
     })
 }
-export const getPopular= () => dispatch => {
+export const getPopular = () => dispatch => {
     axios.get(IP + 'movie/popular?api_key=' + key + '&language=en-US')
     .then(response => {
         return dispatch ({
             type:GET_POPULAR,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({
             type:GET_ERRORS,
-            payload:err.response.data
+            payload:err.response
         })
     })
 }
@@ -48,12 +48,12 @@ export const getUpcoming = () => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_UPCOMING,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({
             type:GET_ERRORS,
-            payload:err.response.data
+            payload:err.response
         })
     })
 }
@@ -62,12 +62,12 @@ export const getTop = () => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_TOP,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({
             type:GET_ERRORS,
-            payload:err.response.data
+            payload:err.response
         })
     })
 }
@@ -77,12 +77,12 @@ export const getMovieById = (id) => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_MOVIE_BY_ID,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({
             type:GET_ERRORS,
-            payload:err.response.data
+            payload:err.response
         })
     })
 }

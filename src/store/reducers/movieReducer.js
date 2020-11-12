@@ -1,11 +1,11 @@
 import {GET_UPCOMING,GET_PLAYING,GET_LATEST,GET_POPULAR,GET_TOP,GET_MOVIE_BY_ID} from '../actions/types'
 
 const initialState = {
-    upcomingMovies:[],
-    topMovies:[],
-    latestMovies:[],
-    playingMovies:[],
-    popularMovies:[],
+    upcomingMovies:{},
+    topMovies:{},
+    latestMovies:{},
+    playingMovies:{},
+    popularMovies:{},
     movie: {}
 }
 // eslint-disable-next-line
