@@ -2,6 +2,7 @@ $header-bg-color: rgb(21,56,75);
 $header-text-color: #ffffff;
 $hover-color: rgb(23,190,198);
 $bg-color:rgb(19, 40, 54);
+$card-color: white;
 @mixin row($value){
     display: flex;
     width: 100%;
@@ -20,4 +21,11 @@ $bg-color:rgb(19, 40, 54);
     :hover{
         color:$hover-color !important;
     }
+}
+
+@mixin text-format($width){
+    width: $width;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden;
 }

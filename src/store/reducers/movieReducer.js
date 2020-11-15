@@ -1,4 +1,4 @@
-import {GET_UPCOMING,GET_PLAYING,GET_LATEST,GET_POPULAR,GET_TOP,GET_MOVIE_BY_ID} from '../actions/types'
+import {GET_UPCOMING,GET_PLAYING,GET_LATEST,GET_POPULAR,GET_TOP,GET_MOVIE_BY_ID, GET_GENRES} from '../actions/types'
 
 const initialState = {
     upcomingMovies:{},
@@ -6,7 +6,8 @@ const initialState = {
     latestMovies:{},
     playingMovies:{},
     popularMovies:{},
-    movie: {}
+    movie: {},
+    genres:{}
 }
 // eslint-disable-next-line
 export default function (state=initialState,action){
@@ -35,6 +36,11 @@ export default function (state=initialState,action){
             return{
                 ...state,
                 latestMovies: action.payload.data
+            }
+        case GET_GENRES:
+            return{
+                ...state,
+                genres: action.payload.data
             }
         case GET_MOVIE_BY_ID:
             return{

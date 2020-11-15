@@ -1,0 +1,39 @@
+@import 'variables';
+
+.movie-card {
+    margin: 20px;
+    img{
+        width: 150px !important;
+        border-radius: 10px;
+    }
+    h2{
+        color: $card-color;
+        font-weight: 700;
+        @include text-format(150px);
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 0;
+    }
+    p{
+        font-size: 12px;
+        color: grey;
+        @include text-format(150px);
+        text-transform: capitalize;
+    }
+    .hd-icon{
+        width: 28px !important;
+        float: right;
+        border-radius: 0;
+    }
+}
+
+.row{
+    @include row(center);
+    width:1200px;
+    padding-left: 300px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

@@ -1,0 +1,58 @@
+.movie-card {
+  margin: 20px;
+}
+
+.movie-card img {
+  width: 150px !important;
+  border-radius: 10px;
+}
+
+.movie-card h2 {
+  color: white;
+  font-weight: 700;
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.movie-card p {
+  font-size: 12px;
+  color: grey;
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.movie-card .hd-icon {
+  width: 28px !important;
+  float: right;
+  border-radius: 0;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1200px;
+  padding-left: 300px;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=card.css.map */
