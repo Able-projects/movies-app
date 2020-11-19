@@ -33,4 +33,69 @@ body {
   margin-left: 140px;
   font-size: 30px;
 }
+
+.genre-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 83%;
+}
+
+.genre-row .genre1 {
+  height: 116px !important;
+}
+
+.genre-item {
+  width: 15%;
+  background-color: #0f1c26;
+  border-radius: 15px;
+  padding: 10px;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.genre-item h2 {
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.genre-item img {
+  width: 30%;
+}
+
+.genre-item:hover {
+  -webkit-box-shadow: 0 0 10px 5px #17bec6;
+          box-shadow: 0 0 10px 5px #17bec6;
+  cursor: pointer;
+}
+
+.menu-genres {
+  background-color: #15384b !important;
+}
+
+.menu-genres .menu-item {
+  color: white !important;
+}
 /*# sourceMappingURL=main.css.map */

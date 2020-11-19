@@ -1,4 +1,4 @@
-import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS, GET_POPULAR, GET_PLAYING, GET_UPCOMING, GET_TOP,GET_GENRES} from './types'
+import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS, GET_POPULAR, GET_PLAYING, GET_UPCOMING, GET_TOP,GET_GENRES,GET_POPULAR_PAGE} from './types'
 import axios from 'axios/index'
 
 export const getLatest = () => dispatch => {
@@ -44,12 +44,26 @@ export const getPopular = () => dispatch => {
         })
     })
 }
+export const getPopularbyPage = (page) => dispatch => {
+    axios.get(IP + 'movie/popular?api_key=' + key + '&language=ru-RU&page=' + page)
+    .then(response => {
+        return dispatch ({
+            type:GET_POPULAR_PAGE,
+            payload:response
+        })
+    }).catch(err =>{
+        return dispatch({
+            type:GET_ERRORS,
+            payload:err.response
+        })
+    })
+}
 export const getPlaying = () => dispatch => {
     axios.get(IP + 'movie/now_playing?api_key=' + key + '&language=ru-RU')
     .then(response => {
         return dispatch ({
             type:GET_PLAYING,
-            payload:response.data
+            payload:response
         })
     }).catch(err =>{
         return dispatch({

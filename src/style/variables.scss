@@ -3,6 +3,7 @@ $header-text-color: #ffffff;
 $hover-color: rgb(23,190,198);
 $bg-color:rgb(19, 40, 54);
 $card-color: white;
+$genre-item-bg:#0f1c26;
 @mixin row($value){
     display: flex;
     width: 100%;

@@ -33,3 +33,42 @@ body{
     margin-left: 140px;
     font-size: 30px;
 }
+
+.genre-row{
+    @include row(space-between);
+    width: 83%;
+    .genre1{
+        height: 116px !important;
+    }
+}
+
+.genre-item{
+    width: 15%;
+    background-color: $genre-item-bg;
+    border-radius: 15px;
+    padding: 10px;
+    padding-top: 20px;
+    @include column(center);
+    h2{
+        color: white;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    img{
+        width: 30%;
+    }
+    &:hover{
+       
+        box-shadow: 0 0 10px 5px $hover-color ;
+        cursor: pointer;
+    }
+    
+}
+
+.menu-genres{
+    background-color: $header-bg-color !important;
+    
+    .menu-item{
+        color: white !important;
+    }
+}
