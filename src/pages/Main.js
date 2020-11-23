@@ -6,7 +6,7 @@ import Slider from '../components/slider'
 import Card from '../components/movieCard'
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-
+import {Link} from 'react-router-dom'
 class Main extends Component{
     componentDidMount(){
         this.props.getPopular()
@@ -22,9 +22,11 @@ class Main extends Component{
         const menu = (
             <Menu className='menu-genres'>
                 {genres && genres.genres ? genres.genres.map(item=>(
+                      <Link to={'/movies/' + item.name +'/' + item.id}>
                     <Menu.Item className='menu-item'>
                     {item.name}
                     </Menu.Item>
+                    </Link>
                 )):
                 null
             }
@@ -62,24 +64,34 @@ class Main extends Component{
                     </div>
                     </Dropdown>
                     <div className='genre-item'>
-                        <img src='https://static.sweet.tv/images/cache/genre_icon/BABCABI=/icon.png' alt='multik'/>
-                        <h2>Мультфильмы</h2>
+                        <Link to='/movies/Мультфильмы/16'>
+                            <img src='https://static.sweet.tv/images/cache/genre_icon/BABCABI=/icon.png' alt='multik'/>
+                            <h2>Мультфильмы</h2>
+                        </Link>
                     </div>
                     <div className='genre-item'>
-                        <img src='https://static.sweet.tv/images/cache/genre_icon/BAASABI=/icon.png' alt='multik'/>
-                        <h2>Сериалы</h2>
+                        <Link to='/movies/Драмы/18'>
+                            <img src='https://static.sweet.tv/images/cache/genre_icon/BAASABI=/icon.png' alt='multik'/>
+                            <h2>Драмы</h2>
+                        </Link>
                     </div>
                     <div className='genre-item'>
-                        <img src='https://static.sweet.tv/images/cache/genre_icon/BALCABI=/icon.png' alt='multik'/>
-                        <h2>Семейные</h2>
+                        <Link to='/movies/Семейные/10751'>
+                            <img src='https://static.sweet.tv/images/cache/genre_icon/BALCABI=/icon.png' alt='multik'/>
+                            <h2>Семейные</h2>
+                        </Link>
                     </div>
                     <div className='genre-item'>
-                        <img src='https://static.sweet.tv/images/cache/genre_icon/BACCABI=/icon.png' alt='multik'/>
-                        <h2>Комедии</h2>
+                        <Link to='/movies/Комедии/35'>
+                            <img src='https://static.sweet.tv/images/cache/genre_icon/BACCABI=/icon.png' alt='multik'/>
+                            <h2>Комедии</h2>
+                        </Link>
                     </div>
                     <div className='genre-item'>
-                        <img src='https://static.sweet.tv/images/cache/genre_icon/BALCABI=/icon.png' alt='multik'/>
-                        <h2>Онлайн школа</h2>
+                        <Link to='/movies/Документальные/99'>
+                            <img src='https://static.sweet.tv/images/cache/genre_icon/BALCABI=/icon.png' alt='multik'/>
+                            <h2>Документальные</h2>
+                        </Link>
                     </div>
                 </div>
                 <h1 className='h1-white'>Фильмы для хорошего настроения</h1>

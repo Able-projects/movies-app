@@ -3,6 +3,7 @@ import store from './store/store'
 import {Provider} from 'react-redux';
 import {BrowserRouter,Route} from 'react-router-dom'
 import Main from './pages/Main'
+import Genres from './pages/genres.js'
 import 'antd/dist/antd.css';
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter >
       <div className="App">
         <Route exact path='/' component={Main}/>
+        <Route exact path='/movies/:genre/:gid' component={Genres}/>
         </div>
       </BrowserRouter>
     </Provider>

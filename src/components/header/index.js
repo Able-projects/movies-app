@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Menu, Dropdown,Button, Input} from 'antd';
 import { DownOutlined, SearchOutlined, EnvironmentOutlined, UserOutlined } from '@ant-design/icons';
-
+import {Link} from 'react-router-dom'
 class Header extends Component{
     state = {
         visible: false
@@ -65,9 +65,13 @@ class Header extends Component{
           );
         return(
             <section className='header-section'>
-                <div>
-                    <img src='https://sweet.tv/images/v2/logo_sweettv.svg' alt='logo'></img>
-                </div>
+                
+                  <div>
+                    <Link to='/'>
+                      <img src='https://sweet.tv/images/v2/logo_sweettv.svg' alt='logo'></img>
+                    </Link>
+                  </div>
+               
                 { !this.state.visible ? 
                 <div className='nav-links'>
                     <div><p>ТВ</p></div>
