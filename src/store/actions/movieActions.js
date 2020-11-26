@@ -1,4 +1,4 @@
-import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS, GET_POPULAR, GET_PLAYING, GET_UPCOMING, GET_TOP,GET_GENRES,GET_POPULAR_PAGE} from './types'
+import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS, GET_POPULAR, GET_PLAYING, GET_UPCOMING, GET_TOP,GET_GENRES,GET_POPULAR_PAGE,GET_MOVIE_REVIEWS,GET_MOVIE_SIMILAR} from './types'
 import axios from 'axios/index'
 
 export const getLatest = () => dispatch => {
@@ -106,6 +106,36 @@ export const getMovieById = (id) => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_MOVIE_BY_ID,
+            payload:response
+        })
+    }).catch(err =>{
+        return dispatch({
+            type:GET_ERRORS,
+            payload:err.response
+        })
+    })
+}
+
+export const getMovieReviews = (id) => dispatch => {
+    axios.get(IP + 'movie/' + id + '/reviews?api_key=' + key + '&language=ru-RU')
+    .then(response => {
+        return dispatch ({
+            type:GET_MOVIE_REVIEWS,
+            payload:response
+        })
+    }).catch(err =>{
+        return dispatch({
+            type:GET_ERRORS,
+            payload:err.response
+        })
+    })
+}
+
+export const getMovieSimilars = (id) => dispatch => {
+    axios.get(IP + 'movie/' + id + '/similar?api_key=' + key + '&language=ru-RU')
+    .then(response => {
+        return dispatch ({
+            type:GET_MOVIE_SIMILAR,
             payload:response
         })
     }).catch(err =>{

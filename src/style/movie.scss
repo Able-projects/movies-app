@@ -1,0 +1,47 @@
+@import 'variables';
+
+.movie-img{
+    img{
+        width: 100%;
+    }
+    width: 60%;
+}
+
+.movie-table{
+    td{
+        color: grey;
+        padding-right: 40px;
+    }
+    .td-white{
+        color: white;
+    }
+    .td-blue{
+        color: $hover-color;
+    }
+    .watcth-btn{
+        margin-top: 20px;
+        border: none;
+        background-color: $hover-color;
+        @include buttons();
+        
+    }
+    .trl-btn{
+        margin-top: 20px;
+        border: 2px solid $hover-color;
+        background-color: transparent;
+        @include buttons();
+    }
+}
+.overview-p{
+    color: white;
+    width: 80%;
+    margin-top: 40px;
+}
+
+.p-grey{
+    color: gray;
+}
+
+.p-white{
+    color: white;
+}

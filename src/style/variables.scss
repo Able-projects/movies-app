@@ -30,3 +30,11 @@ $genre-item-bg:#0f1c26;
     white-space: nowrap; 
     overflow: hidden;
 }
+
+@mixin buttons(){
+    color:white;
+    height: 40px;
+    width: 120px;
+    text-transform: uppercase;
+    border-radius: 20px;
+}

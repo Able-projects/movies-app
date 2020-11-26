@@ -1,0 +1,57 @@
+.movie-img {
+  width: 60%;
+}
+
+.movie-img img {
+  width: 100%;
+}
+
+.movie-table td {
+  color: grey;
+  padding-right: 40px;
+}
+
+.movie-table .td-white {
+  color: white;
+}
+
+.movie-table .td-blue {
+  color: #17bec6;
+}
+
+.movie-table .watcth-btn {
+  margin-top: 20px;
+  border: none;
+  background-color: #17bec6;
+  color: white;
+  height: 40px;
+  width: 120px;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.movie-table .trl-btn {
+  margin-top: 20px;
+  border: 2px solid #17bec6;
+  background-color: transparent;
+  color: white;
+  height: 40px;
+  width: 120px;
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+
+.overview-p {
+  color: white;
+  width: 80%;
+  margin-top: 40px;
+}
+
+.p-grey {
+  color: gray;
+}
+
+.p-white {
+  color: white;
+}
+/*# sourceMappingURL=movie.css.map */
