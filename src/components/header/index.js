@@ -1,16 +1,27 @@
 import React, {Component} from 'react'
 import { Menu, Dropdown,Button, Input} from 'antd';
+import { withRouter} from 'react-router-dom';
 import { DownOutlined, SearchOutlined, EnvironmentOutlined, UserOutlined } from '@ant-design/icons';
 import {Link} from 'react-router-dom'
+
 class Header extends Component{
-    state = {
-        visible: false
+      constructor(props) {
+        super(props);
+        this.state = {
+          visible: false
+      }
     }
+    
     setVisible = () => {
         this.setState({visible: !this.state.visible})
     }
-   
+    
     render(){
+      let keyPress = (e) => {
+        if(e.keyCode === 13){
+           this.props.history.push('/search/'+ e.target.value)
+        }
+     }
         const menu = (
             <Menu>
               <Menu.Item>
@@ -94,7 +105,7 @@ class Header extends Component{
                 </div>:
                 null }
                 {this.state.visible ? 
-                    <Input className='search-input' placeholder='Поиск'></Input>:
+                    <Input className='search-input' placeholder='Поиск' onKeyDown={keyPress}></Input>:
                     null 
                     }
                 <div>
@@ -117,4 +128,5 @@ class Header extends Component{
     }
 }
 
-export default Header;
+
+export default withRouter(Header);

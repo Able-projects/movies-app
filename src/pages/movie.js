@@ -3,6 +3,7 @@ import Header from '../components/header'
 import {getMovieById,getMovieSimilars,getGenres} from '../store/actions/movieActions'
 import connect from "react-redux/es/connect/connect";
 import Card from '../components/movieCard/index'
+import Footer from '../components/footer'
 class MoviePage extends Component{
     componentDidMount(){
         window.scroll(0,0)
@@ -87,6 +88,7 @@ class MoviePage extends Component{
                     null
                 }
                 </div>
+                <Footer/>
             </section>
         )
     }

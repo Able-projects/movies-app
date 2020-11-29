@@ -5,6 +5,7 @@ import connect from "react-redux/es/connect/connect";
 import Slider from '../components/slider'
 import Card from '../components/movieCard'
 import { Menu, Dropdown } from 'antd';
+import Footer from '../components/footer'
 import { DownOutlined } from '@ant-design/icons';
 import {Link} from 'react-router-dom'
 class Main extends Component{
@@ -121,6 +122,7 @@ class Main extends Component{
                     null
                 }
                 </div>
+                <Footer/>
             </section>
         )
     }

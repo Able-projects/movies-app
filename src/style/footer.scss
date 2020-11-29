@@ -1,0 +1,59 @@
+@import 'variables';
+
+.footer{
+    background-color: #061017;
+    .footer-p{
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding-bottom: 30px;
+    }
+    button{
+        border: 1px solid $hover-color;
+        border-radius: 50%;
+        background-color: transparent;
+        outline: none;
+        color: $hover-color;
+        font-size: 22px;
+        float: right;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .footer-row{
+        @include row(space-around);
+        margin-top: 40px;
+        padding: 50px;
+        padding-left: 10%;
+        padding-right: 10%;
+        .footer-h2{
+            color: $hover-color;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        p{
+            color: white;
+            font-size: 16px;
+        }
+        span{
+            color: gray;
+            font-size: 12px;
+        }
+        .last-item{
+            @include column(center);
+        }
+        div{
+            width: 25%;
+        }
+        img{
+            margin-top: 15px;
+        }
+        .footer-icons{
+            color: white;
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        .footer-div{
+            width: 100%;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import Header from '../components/header'
 import {getPopular,getTop,getGenres,getPlaying,getUpcoming,getPopularbyPage} from '../store/actions/movieActions'
 import connect from "react-redux/es/connect/connect";
 import Card from '../components/movieCard'
-
+import Footer from '../components/footer'
 
 class Genres extends Component{
     componentDidMount(){
@@ -149,6 +149,7 @@ class Genres extends Component{
                     null
                     }
                 </div>
+                <Footer/>
             </section>
         )
     }
