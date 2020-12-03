@@ -1,19 +1,22 @@
 import React, {Component} from 'react'
 import Header from '../components/header'
-import {getMovieById,getMovieSimilars,getGenres} from '../store/actions/movieActions'
+import {getMovieById,getMovieSimilars,getGenres,getMovieCast} from '../store/actions/movieActions'
 import connect from "react-redux/es/connect/connect";
 import Card from '../components/movieCard/index'
 import Footer from '../components/footer'
+import ActorCard from '../components/actors'
 class MoviePage extends Component{
     componentDidMount(){
         window.scroll(0,0)
         this.props.getMovieById(this.props.match.params.mid)
+        this.props.getMovieCast(this.props.match.params.mid)
         this.props.getMovieSimilars(this.props.match.params.mid)
         this.props.getGenres()
+        
     }
   
     render(){
-        const {movie,movieSimilar,genres} = this.props.movieReducer
+        const {movie,movieSimilar,genres,castResult} = this.props.movieReducer
       
         return(
             <section >
@@ -79,6 +82,15 @@ class MoviePage extends Component{
                         )):null}</p>
                     </div>
                 </div>
+                <h1 className='h1-white'>Актерский состав</h1>
+                <div className='row'>
+                    {castResult && castResult.cast ?
+                    castResult.cast.map(item => (
+                    <ActorCard actor={item}></ActorCard>
+                    )):
+                    null
+                }
+                </div>
                 <h1 className='h1-white'>Похожее</h1>
                 <div className='row'>
                     {movieSimilar && movieSimilar.results ?
@@ -98,4 +110,4 @@ const mapStateToProps = (state) => ({
     movieReducer:state.movieReducer
 });
 
-export default connect(mapStateToProps, {getMovieById,getMovieSimilars,getGenres})(MoviePage);
+export default connect(mapStateToProps, {getMovieById,getMovieSimilars,getGenres,getMovieCast})(MoviePage);
