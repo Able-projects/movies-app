@@ -8,7 +8,10 @@ class Card extends Component{
         return(
         <Link to={'/movie/'+this.props.movie.id} >
          <div className='movie-card'>
-            <img src={'https://image.tmdb.org/t/p/original/'+this.props.movie.poster_path} alt='card'/>
+             {this.props.movie.poster_path ? 
+            <img src={'https://image.tmdb.org/t/p/original/'+this.props.movie.poster_path} alt='card'/>:
+            <img src='/movie.jpg' alt='card'/>
+             }
             <h2>{this.props.movie.title}</h2>
             <p>
                 {this.props.genre.genres ? this.props.genre.genres.map(item => (

@@ -1,16 +1,18 @@
 import React, {Component} from 'react'
 import Header from '../components/header'
-import {getActorInfo} from '../store/actions/movieActions'
+import {getActorInfo, getActorCredits} from '../store/actions/movieActions'
 import connect from "react-redux/es/connect/connect";
 import Footer from '../components/footer'
+import Card from '../components/movieCard/index'
 class ActorPage extends Component{
     componentDidMount(){
         window.scroll(0,0)
         this.props.getActorInfo(this.props.match.params.aid)
+        this.props.getActorCredits(this.props.match.params.aid)
     }
   
     render(){
-        const {actorInfo} = this.props.movieReducer
+        const {actorInfo,actorCredits,genres} = this.props.movieReducer
       
         return(
             <section >
@@ -28,7 +30,15 @@ class ActorPage extends Component{
                     </div>
                 </div>
                 <p className='p-biography'>{actorInfo.biography}</p>
-               
+                <h1 className='h1-white'>Фильмы с актёром</h1>
+                <div className='row'>
+                    {actorCredits && actorCredits.cast ?
+                    actorCredits.cast.map(item => (
+                        <Card movie={item} genre={genres}/>
+                    )):
+                    null
+                }
+                </div>
                 <Footer/>
             </section>
         )
@@ -39,4 +49,4 @@ const mapStateToProps = (state) => ({
     movieReducer:state.movieReducer
 });
 
-export default connect(mapStateToProps, {getActorInfo})(ActorPage);
+export default connect(mapStateToProps, {getActorInfo,getActorCredits})(ActorPage);

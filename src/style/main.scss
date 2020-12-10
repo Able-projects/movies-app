@@ -73,3 +73,11 @@ body{
         color: white !important;
     }
 }
+
+.movie-rows-slider{
+    width: 85%;
+    margin: auto;
+    .flickity-page-dots{
+        display: none;
+    }
+}

@@ -70,7 +70,10 @@ class MoviePage extends Component{
                         </tr>
                     </table>
                     <div className='movie-img'>
-                        <img src={'https://image.tmdb.org/t/p/original/'+movie.backdrop_path} alt='image11'/>
+                        {movie.backdrop_path ? 
+                            <img src={'https://image.tmdb.org/t/p/original/'+movie.backdrop_path} alt='card'/>:
+                            <img src='/mm.jpg' alt='card'/>
+                            }
                     </div>
                 </div>
                 <div className='genre-row'>

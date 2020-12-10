@@ -1,4 +1,4 @@
-import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS,GET_ACTOR_INFO, GET_POPULAR,GET_CAST, GET_PLAYING, GET_UPCOMING,GET_RESULT, GET_TOP,GET_GENRES,GET_POPULAR_PAGE,GET_MOVIE_REVIEWS,GET_MOVIE_SIMILAR} from './types'
+import {IP, GET_MOVIE_BY_ID,GET_LATEST,key,GET_ERRORS,GET_ACTOR_INFO,GET_ACTOR_CREDITS, GET_POPULAR,GET_CAST, GET_PLAYING, GET_UPCOMING,GET_RESULT, GET_TOP,GET_GENRES,GET_POPULAR_PAGE,GET_MOVIE_REVIEWS,GET_MOVIE_SIMILAR} from './types'
 import axios from 'axios/index'
 
 export const getLatest = () => dispatch => {
@@ -181,6 +181,21 @@ export const getActorInfo = (id) => dispatch => {
     .then(response => {
         return dispatch ({
             type:GET_ACTOR_INFO,
+            payload:response
+        })
+    }).catch(err =>{
+        return dispatch({
+            type:GET_ERRORS,
+            payload:err.response
+        })
+    })
+}
+
+export const getActorCredits = (id) => dispatch => {
+    axios.get(IP + 'person/' + id + '/movie_credits?api_key=' + key + '&language=ru-RU')
+    .then(response => {
+        return dispatch ({
+            type:GET_ACTOR_CREDITS,
             payload:response
         })
     }).catch(err =>{

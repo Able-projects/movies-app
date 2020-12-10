@@ -8,6 +8,8 @@ import { Menu, Dropdown } from 'antd';
 import Footer from '../components/footer'
 import { DownOutlined } from '@ant-design/icons';
 import {Link} from 'react-router-dom'
+import Flickity from 'react-flickity-component'
+ 
 class Main extends Component{
     componentDidMount(){
         this.props.getPopular()
@@ -34,29 +36,45 @@ class Main extends Component{
              
             </Menu>
           );
+          const flickityOptions = {
+            initialIndex: 3
+        }
         return(
             <section>
                 <Header/>
                 <h1 className='h1-white'>Фильмы смотреть онлайн</h1>
                 <Slider movies={popularMovies}/>
                 <h1 className='h1-white'>Лучшие фильмы десятилетия</h1>
-                <div className='row'>
-                    {topMovies && topMovies.results ?
+                <Flickity
+                    className={'movie-rows-slider'} 
+                    elementType={'div'} 
+                    options={flickityOptions} 
+                    disableImagesLoaded={false} 
+                    reloadOnUpdate 
+                    >
+                 {topMovies && topMovies.results ?
                     topMovies.results.map(item => (
                         <Card movie={item} genre={genres}/>
                     )):
                     null
                 }
-                </div>
+                </Flickity>
+               
                 <h1 className='h1-white'>Легкие комедии</h1>
-                <div className='row'>
-                    {popularMovies && popularMovies.results ?
+                <Flickity
+                    className={'movie-rows-slider'} 
+                    elementType={'div'} 
+                    options={flickityOptions} 
+                    disableImagesLoaded={false} 
+                    reloadOnUpdate 
+                    >
+                 {popularMovies && popularMovies.results ?
                     popularMovies.results.map(item => (
                         <Card movie={item} genre={genres}/>
                     )):
                     null
                 }
-                </div>
+                </Flickity>
                 <h1 className='h1-white'>Выбери фильм на любой вкус</h1>
                 <div className='genre-row'>
                     <Dropdown overlay={menu}>
@@ -96,32 +114,52 @@ class Main extends Component{
                     </div>
                 </div>
                 <h1 className='h1-white'>Фильмы для хорошего настроения</h1>
-                <div className='row'>
-                    {upcomingMovies && upcomingMovies.results ?
+                <Flickity
+                    className={'movie-rows-slider'} 
+                    elementType={'div'} 
+                    options={flickityOptions} 
+                    disableImagesLoaded={false} 
+                    reloadOnUpdate 
+                    >
+                 {upcomingMovies && upcomingMovies.results ?
                     upcomingMovies.results.map(item => (
                         <Card movie={item} genre={genres}/>
                     )):
                     null
                 }
-                </div>
+                </Flickity>
                 <h1 className='h1-white'>Остросюжетные триллеры</h1>
-                <div className='row'>
-                    {playingMovies && playingMovies.results ?
+                <Flickity
+                    className={'movie-rows-slider'} 
+                    elementType={'div'} 
+                    options={flickityOptions} 
+                    disableImagesLoaded={false} 
+                    reloadOnUpdate 
+                    >
+                 {playingMovies && playingMovies.results ?
                     playingMovies.results.map(item => (
                         <Card movie={item} genre={genres}/>
                     )):
                     null
                 }
-                </div>
+                </Flickity>
+    
                 <h1 className='h1-white'>Самое просматриваемое</h1>
-                <div className='row'>
-                    {popularPage && popularPage.results ?
+                <Flickity
+                    className={'movie-rows-slider'} 
+                    elementType={'div'} 
+                    options={flickityOptions} 
+                    disableImagesLoaded={false} 
+                    reloadOnUpdate 
+                    >
+                 {playingMovies && popularPage.results ?
                     popularPage.results.map(item => (
                         <Card movie={item} genre={genres}/>
                     )):
                     null
                 }
-                </div>
+                </Flickity>
+    
                 <Footer/>
             </section>
         )

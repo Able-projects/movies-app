@@ -99,4 +99,13 @@ body {
 .menu-genres .menu-item {
   color: white !important;
 }
+
+.movie-rows-slider {
+  width: 85%;
+  margin: auto;
+}
+
+.movie-rows-slider .flickity-page-dots {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */
